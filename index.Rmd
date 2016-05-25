@@ -1,0 +1,60 @@
+---
+title       : Weather App Pitch
+subtitle    : An interactive widget to visualize Boston's weather in 2015
+author      : Ezra Tucker
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Usage
+
+1. Use the date selecter to select a range of dates
+2. Use the drop-down menu to select which variable to use
+
+--- .class #id 
+
+## Units
+
+|Data Type | Units|
+|----------|-------------|
+|Temperature | Degrees F|
+|Wind Speed | Miles per Hour |
+|Dew Point | Degrees F |
+|Pressure | Inches Mercury |
+|Density | kg per cubic meter|
+
+
+---
+
+## Air density
+
+Air density is found by using the ideal gas equation:
+
+$$\rho = \frac{p}{R T}$$
+
+For example:
+
+```{r}
+Temperature <- 28  # in degrees F
+Pressure <- 30  # in inches mercury
+Rconst <- 287.058 #J/kg-K
+(Pressure * 3386.39) / ((Temperature + 459.67) * (5/9) * Rconst)  # in kg/m^3
+```
+
+
+
+---
+
+
+## Further work
+
+1. Possibility for expanding to other cities
+2. Could call data using API instead of loading into app
+3. There are additional weather-related variables, could visualize them.
+
+
